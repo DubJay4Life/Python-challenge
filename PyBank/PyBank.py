@@ -1,35 +1,30 @@
-# -*- coding: UTF-8 -*-
-"""PyBank Homework Starter File."""
-
 # Dependencies
 import csv
 import os
 
-# Files to load and output (update with correct file paths)
-file_to_load = os.path.join("Resources", "budget_data.csv")  # Input file path
-file_to_output = os.path.join("analysis", "budget_analysis.txt")  # Output file path
 
-# Define variables to track the financial data
-total_months = 0
-total_net = 0
+# Files to load and output (update with correct file paths)
+INPUT_PATH = os.path.join("Resources", "budget_data.csv")  # Input file path
+OUTPUT_PATH = os.path.join("analysis", "budget_analysis.txt")  # Output file path
+
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Add more variables to track other necessary financial data
 
 # Open and read the csv
-with open(file_to_load) as financial_data:
-    reader = csv.reader(financial_data)
-
+with open(INPUT_PATH) as input_file :
+    reader = csv.reader(input_file)
     # Skip the header row
     header = next(reader)
-
-    # Extract first row to avoid appending to net_change_list
-
-
-    # Track the total and net change
-
+    # Extract first row to avoid calculating change
+    first_data_row = next(reader)
+    print(type(first_data_row), first_data_row)
+    total_months = 1
+    total_profit = int(first_data_row[1])
+    print(type(total_profit), total_profit)
 
     # Process each row of data
     for row in reader:
-
+        pass
         # Track the total
 
 
@@ -52,6 +47,6 @@ with open(file_to_load) as financial_data:
 # Print the output
 
 
-# Write the results to a text file
-with open(file_to_output, "w") as txt_file:
-    txt_file.write(output)
+# # Write the results to a text file
+# with open(OUTPUT_PATH, "w") as txt_file:
+#     txt_file.write(output)
