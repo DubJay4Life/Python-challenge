@@ -9,7 +9,7 @@ file_to_output = "analysis/election_analysis.txt" # Output file path
 total_votes = 0
 vote_dict = {}
 
-# Code ripped 3.2.8
+# Open the CSV file and process it
 with open(filepath) as csvfile:
 
     # CSV reader specifies delimiter and variable that holds contents
